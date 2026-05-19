@@ -10,21 +10,13 @@ This document provides the Software Requirements Specification (SRS) for the **S
 
 # Version History
 
-Version
+Version 1.0 - Initial Draft
 
-Description
 
-1.0
+Version 1.1- Added Non-Functional Requirements
 
-Initial Draft
+Version 1.2 - Added System Models and Future Enhancements
 
-1.1
-
-Added Non-Functional Requirements
-
-1.2
-
-Added System Models and Future Enhancements
 
 ----------
 
