@@ -1,214 +1,452 @@
-# Software Requirements Specification (SRS)
+# Project Title: SmartWap – Social Media Application
 
-## Preface
+----------
 
-This document provides the Software Requirements Specification (SRS) for the WorkSync. It defines the system’s functionalities, performance criteria, security requirements, and overall system architecture necessary for development.
+# Preface
 
----
+This document provides the Software Requirements Specification (SRS) for the **SmartWap – Social Media Application**. It defines the system functionalities, security requirements, performance standards, and architectural design necessary for development and deployment.
 
-## Version History
+----------
 
-* **Version 1.0** – Initial Draft.
-* **Version 1.1** – Added non-functional requirements and system models.
-* **Version 1.2** – Refined system evolution and glossary.
+# Version History
 
----
+Version
 
-## 1. Introduction
+Description
 
-### Purpose
+1.0
 
-The WorkSync is a web-based application designed to enhance organizational efficiency by streamlining task assignment, real-time monitoring, collaboration, and reporting. The system enables teams to effectively manage their workflows, ensuring timely project completion and optimized resource allocation.
+Initial Draft
 
-### Document Conventions
+1.1
 
-This document follows the IEEE SRS standard, using:
+Added Non-Functional Requirements
 
-* **Must** – Indicates mandatory requirements.
-* **Should** – Indicates recommended features.
-* **May** – Indicates optional enhancements.
+1.2
 
-### Intended Audience and Reading Suggestions
+Added System Models and Future Enhancements
 
-* **Project Managers & Developers** – For system implementation guidance.
-* **Stakeholders & Business Analysts** – To understand system capabilities.
-* **Testers & QA Teams** – To validate compliance with requirements.
+----------
 
-### Scope
+# 1. Introduction
+
+## Purpose
+
+The **SmartWap** is a web-based social media platform designed to help users connect, communicate, share content, and interact in real time. The system enables users to create profiles, upload posts, chat with friends, react to content, and build online communities.
+
+----------
+
+## Document Conventions
+
+This document follows the IEEE SRS standard using:
+
+-   **Must** – Mandatory requirement
+-   **Should** – Recommended feature
+-   **May** – Optional enhancement
+
+----------
+
+## Intended Audience and Reading Suggestions
+
+-   **Developers & Designers** – For implementation guidance
+-   **Project Managers** – For project planning
+-   **Testers & QA Teams** – For requirement validation
+-   **Stakeholders** – For understanding system capabilities
+
+----------
+
+## Scope
 
 The system provides:
 
-* Task assignment and tracking
-* Real-time monitoring and reporting
-* Integrated collaboration tools (notes, coding workspace, file sharing)
-* Customizable dashboards
-* Role-based access and security features
+-   User registration and authentication
+-   Profile management
+-   Post creation and sharing
+-   Real-time messaging system
+-   Friend request and follow system
+-   Notifications and reactions
+-   Media upload and sharing
 
-### References
+----------
 
-* IEEE Standard 830-1998 (Software Requirements Specification)
-* Internal Business Requirement Specification (BRS)
-* System Modeling Documentation
+## References
 
----
+-   IEEE Standard 830-1998 (Software Requirements Specification)
+-   Social Media Platform Requirement Analysis
+-   System Modeling Documentation
 
-## 2. Overall Description
+----------
 
-### Product Perspective
+# 2. Overall Description
 
-The WorkSync is a standalone web application, integrating with external services such as Slack, Microsoft Teams, and other productivity tools.
+## Product Perspective
 
-### Product Functions
+The **SmartWap** system is a standalone web application that may integrate with:
 
-* **Task Management:** Assign, track, and complete tasks.
-* **Project Management:** Monitor project progress and milestones.
-* **Reporting & Analytics:** Generate real-time reports and performance metrics.
-* **Collaboration:** Share files, take notes, and work within a digital workspace.
-* **Notifications:** Alerts for deadlines, updates, and system messages.
+-   Google Authentication
+-   Facebook Login
+-   Cloud Storage Services
+-   Email Notification Services
 
-### User Classes and Characteristics
+----------
 
-* **Admin:** Manages users, permissions, and system settings.
-* **Manager:** Assigns tasks, tracks progress, and reviews reports.
-* **Employee:** Works on assigned tasks and updates status.
+## Product Functions
 
-### Operating Environment
+### User Management
 
-* Web-based application (accessible via Chrome, Firefox, Edge).
-* Cloud-hosted infrastructure.
-* **Database:** MongoDB.
+-   User registration and login
+-   Password recovery
+-   Profile editing
 
-### Design and Implementation Constraints
+### Social Features
 
-* Compliance with GDPR and security regulations.
-* Scalability to support different organizational sizes.
+-   Add friends and follow users
+-   Create posts and stories
+-   Like, comment, and share posts
 
-### Assumptions and Dependencies
+### Messaging System
 
-* Internet access is required for real-time updates.
-* Future mobile application integration may be considered.
+-   Real-time private messaging
+-   Group chat support
 
----
+### Media Sharing
 
-## 3. System Requirements Specification
+-   Upload images and videos
+-   Share multimedia content
 
-### Functional Requirements
+### Notifications
 
-* **User Authentication**
-* The system must allow users to register, log in, and reset passwords.
-* The system must enforce role-based authentication (Admin, Manager, Employee).
+-   Real-time alerts for messages, likes, comments, and friend requests
 
+----------
 
-* **Task Management**
-* Managers must be able to create, assign, and track tasks.
-* Employees must be able to update task statuses.
-* The system must send notifications when tasks are assigned or updated.
+## User Classes and Characteristics
 
+### Admin
 
-* **Project Management**
-* The system must allow users to create and manage projects.
-* Each project must be linked to multiple tasks.
+-   Manages users, reports, and platform settings
 
+### Registered User
 
-* **Reporting & Analytics**
-* Managers must be able to generate reports on task completion rates and employee performance.
-* Reports should be exportable in PDF and CSV formats.
+-   Creates posts, chats, reacts, and manages profile
 
+### Guest User
 
-* **Collaboration Tools**
-* Users should be able to take notes and share files within the system.
-* The system may integrate a basic text editor and coding workspace.
+-   Limited browsing access without login
 
+----------
 
-* **Notifications**
-* The system must send alerts for task assignments, deadline reminders, and updates.
+## Operating Environment
 
+-   Web-based Application
+-   Supported Browsers:
+    -   Google Chrome
+    -   Mozilla Firefox
+    -   Microsoft Edge
 
+### Database
 
-### Non-Functional Requirements
+-   MongoDB
 
-* **Performance Requirements**
-* The system must support 500+ concurrent users.
-* Task updates must reflect in real time.
+### Hosting
 
+-   Cloud-based infrastructure
 
-* **Security Requirements**
-* The system must implement role-based access control.
-* All sensitive user data must be encrypted.
+----------
 
+## Design and Implementation Constraints
 
-* **Usability Requirements**
-* The system should have an intuitive UI/UX.
-* The system must support accessibility standards.
+-   Must ensure user data privacy and security
+-   Must support scalable architecture
+-   Internet connection required for real-time communication
 
+----------
 
-* **Reliability and Availability**
-* The system must ensure 99.9% uptime.
-* A backup mechanism must be in place for data recovery.
+## Assumptions and Dependencies
 
+-   Users have internet access
+-   Cloud services remain available
+-   Future mobile application support may be added
 
-* **Maintainability and Support**
-* The system must support modular updates.
-* The system must provide proper logging and debugging mechanisms.
+----------
 
+# 3. System Requirements Specification
 
-* **Portability**
-* The system should be accessible from Windows, Mac, and Linux.
-* The system must support cloud deployment.
+# Functional Requirements
 
+----------
 
+## User Authentication
 
----
+-   The system must allow users to register and log in.
+-   The system must support email verification.
+-   The system must provide password reset functionality.
+-   The system must implement secure authentication.
 
-## 4. System Models
+----------
 
+## Profile Management
 
-> * **CONTEXT DIAGRAM**
-<img src="images/2. Context Model.png">
+-   Users must be able to create and edit profiles.
+-   Users should upload profile pictures and cover photos.
+-   Users may update personal information.
 
-> * **ACTIVITY DIAGRAM**
+----------
 
-<img src="images/3. Activity Diagram.png" alt="Activity Diagram">
+## Post Management
 
-> * **USE CASE DIAGRAMS**
-<img src="images/4. Use Case Diagrams_page-0001.jpg" alt="Use Case Diagrams Page 1">
-<img src="images/4. Use Case Diagrams_page-0002.jpg" alt="Use Case Diagrams Page 2">
-<img src="images/4. Use Case Diagrams_page-0003.jpg" alt="Use Case Diagrams Page 3">
-<img src="images/4. Use Case Diagrams_page-0004.jpg" alt="Use Case Diagrams Page 4"> 
+-   Users must create text, image, and video posts.
+-   Users should edit and delete their posts.
+-   The system must display posts in a news feed.
 
-> * **SEQUENCE DIAGRAM**
+----------
 
-<img src="images/5. Sequence Diagram_page-0001.jpg">
+## Friend & Follow System
 
-> * **ENTITY-RELATIONSHIP DIAGRAM**
-<img src="images/6. ER Diagram.png" alt="ER Diagram">
+-   Users must send and accept friend requests.
+-   Users may follow public profiles.
+-   Users should block unwanted users.
 
-> * **STATE DIAGRAM**
-<img src="images/7. State Diagram.png" alt="State Diagram">
+----------
 
----
+## Messaging System
 
-## 5. System Evolution
+-   Users must send and receive messages in real time.
+-   The system should support group messaging.
+-   Users may share files and media in chats.
 
-### Assumptions
+----------
 
-* AI should be integrated to boost production.
-* Future support for mobile platforms.
-* Scalability for enterprise usage.
+## Reactions and Comments
 
-### Expected Changes
+-   Users must like and comment on posts.
+-   Users may share posts with others.
+-   Users should react using emojis.
 
-* Integration with third-party services.
-* AI-powered task recommendations.
+----------
 
----
+## Notification System
 
-## 6. Appendices
+-   The system must notify users about:
+    -   Friend requests
+    -   Likes and comments
+    -   New messages
+    -   Shares and mentions
 
-### Hardware Requirements
+----------
 
-* Cloud-based infrastructure with scalable servers.
+## Search System
 
-### Database Requirements
+-   Users should search for:
+    -   Friends
+    -   Posts
+    -   Groups
+    -   Pages
 
-* Must include logical data relationships.
+----------
+
+# Non-Functional Requirements
+
+----------
+
+## Performance Requirements
+
+-   The system must support 2000+ concurrent users.
+-   Real-time messaging latency should be under 2 seconds.
+-   Feed loading time should be under 3 seconds.
+
+----------
+
+## Security Requirements
+
+-   Passwords must be encrypted.
+-   HTTPS protocol must be implemented.
+-   The system must provide role-based access control.
+-   User data must be securely stored.
+
+----------
+
+## Usability Requirements
+
+-   The system should provide responsive UI/UX.
+-   The interface should be mobile-friendly.
+-   Accessibility standards should be maintained.
+
+----------
+
+## Reliability and Availability
+
+-   The system must ensure 99.9% uptime.
+-   Automatic backup mechanisms must be available.
+
+----------
+
+## Maintainability
+
+-   The application should support modular updates.
+-   Logging and debugging systems must be implemented.
+
+----------
+
+## Portability
+
+-   The system should run on Windows, Linux, and MacOS.
+-   Cloud deployment support is required.
+
+----------
+
+# 4. System Models
+
+## CONTEXT DIAGRAM
+
+### External Entities:
+
+-   User
+-   Admin
+-   Database
+-   Notification Service
+-   Cloud Storage
+
+----------
+
+## ACTIVITY DIAGRAM
+
+### User Activity Flow:
+
+1.  Register/Login
+2.  Create Profile
+3.  Add Friends
+4.  Create Posts
+5.  Interact with Content
+6.  Send Messages
+7.  Receive Notifications
+
+----------
+
+## USE CASE DIAGRAMS
+
+### Admin Use Cases
+
+-   Manage Users
+-   Remove Inappropriate Content
+-   Monitor Reports
+-   Manage System Settings
+
+### User Use Cases
+
+-   Register/Login
+-   Edit Profile
+-   Upload Posts
+-   Send Messages
+-   React to Posts
+-   Add Friends
+
+----------
+
+## SEQUENCE DIAGRAM
+
+### Messaging Process:
+
+1.  User sends message
+2.  System validates message
+3.  Database stores message
+4.  Receiver gets real-time notification
+
+----------
+
+## ENTITY RELATIONSHIP DIAGRAM (ERD)
+
+### Entities:
+
+-   User
+-   Post
+-   Comment
+-   Reaction
+-   Message
+-   FriendRequest
+-   Notification
+
+### Relationships:
+
+-   One User → Many Posts
+-   One Post → Many Comments
+-   One User → Many Messages
+-   One User → Many Friend Requests
+
+----------
+
+## STATE DIAGRAM
+
+### Post States:
+
+-   Created
+-   Published
+-   Edited
+-   Shared
+-   Deleted
+
+----------
+
+# 5. System Evolution
+
+## Assumptions
+
+-   AI-powered content recommendations may be added.
+-   Mobile applications may be developed in future.
+-   Voice and video calling features may be integrated.
+
+----------
+
+## Expected Changes
+
+-   AI-based friend suggestions
+-   Live streaming support
+-   Advanced analytics dashboard
+-   Third-party API integrations
+
+----------
+
+# 6. Appendices
+
+## Hardware Requirements
+
+-   Cloud-based hosting server
+-   Minimum 16GB RAM
+-   SSD Storage
+
+----------
+
+## Database Requirements
+
+-   Secure NoSQL database structure
+-   High-speed data retrieval
+-   Backup and recovery support
+
+----------
+
+# Glossary
+
+Term
+
+Meaning
+
+UI/UX
+
+User Interface / User Experience
+
+API
+
+Application Programming Interface
+
+HTTPS
+
+HyperText Transfer Protocol Secure
+
+DBMS
+
+Database Management System
+
+Admin
+
+System Administrator
+                    
